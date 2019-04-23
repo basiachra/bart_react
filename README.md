@@ -4,13 +4,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start:react`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+### `npm start:server`
+
+Runs the app server.<br>To connect to mongoDB you have to run mongod as well
+<br> Database name is axios and the collection name is images
 
 ### `npm test`
 
