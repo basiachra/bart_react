@@ -1,0 +1,44 @@
+.header{
+  height: 0.32 * $page-height;
+  position:relative;
+
+  &_blurred {
+    height: 100%;
+    background-size: cover;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    background: url("img/blanc.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.5s;
+  }
+
+  &_blurred--img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    transition: all 0.5s;
+  }
+
+  &_opacity{
+    height: 100%;
+    width:100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba($color-black, 0.2);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top:0;
+    right:0;
+  }
+}
+
+.wrapper{
+  width:73%;
+  margin:auto;
+  margin-top: -($card-height)/2;
+  z-index: 155;
+}
+
+
+
+

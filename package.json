@@ -3,15 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.0.7",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.2",
     "react": "^16.8.6",
+    "react-dnd": "^7.4.5",
+    "react-dnd-html5-backend": "^7.4.4",
     "react-dom": "^16.8.6",
+    "react-dropzone": "^10.1.4",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start:react": "react-scripts start",
+    "build:react": "react-scripts build",
+    "start:server": "nodemon todolistapi/server.js",
+    "start:web": "webpack-dev-server --mode development --open",
+    "build:web": "webpack --mode production",
+    "dev": "webpack --mode development",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "compile:sass": "node-sass src/sass/main.scss src/css/App.css -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +41,20 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "multer": "^1.4.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.11",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.1.14"
+  }
 }

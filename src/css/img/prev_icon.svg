@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 25" width="16" height="25">
+	<style>
+		tspan { white-space:pre }
+		.shp0 {fill: #ffffff }
+	</style>
+	<g id="categories">
+		<path id="prev icon copy copy" class="shp0" d="M12.16,25l2.86,-2.82l-9.28,-9.18l9.28,-9.18l-2.86,-2.82l-12.15,12z" />
+	</g>
+</svg>

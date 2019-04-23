@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 13" width="19" height="13">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #f9f9f9 } 
+	</style>
+	<g id="categories">
+		<path id="back icon" class="shp0" d="M19,6h-14.17l3.58,-3.59l-1.41,-1.41l-6,6l6,6l1.41,-1.41l-3.58,-3.59h14.17z" />
+	</g>
+</svg>

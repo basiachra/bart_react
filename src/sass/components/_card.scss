@@ -1,0 +1,74 @@
+.card{
+
+  margin:auto;
+  margin-bottom:3rem;
+  position:relative;
+  background-color: $background-color;
+  text-align: center;
+  height: $card-height;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba($color-black,0.15);
+  transition: all .3s;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 .1rem 2rem rgba(black, .3);
+  }
+
+  &:hover &_title{
+    height:35%;
+  }
+
+  &:hover &_title .photo_count{
+    display: block;
+    opacity: 1;
+  }
+
+  &_title{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    position:absolute;
+    width:100%;
+    background-color: $background-color;
+    bottom:0;
+    height:25%;
+    transition: all .3s;
+  }
+
+  &_photo {
+    transition: all .3s;
+    height: 75%;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  &_gallery{
+    transition: all .3s;
+    height:100%;
+    background-size: cover ;
+    background-position: 50% 50%;
+  }
+
+  .cover{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+  }
+  &_new{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $background-color;
+    height: $card-height;
+    border-radius: 5px;
+    transition: all .3s;
+    box-shadow: 0 1px .5rem rgba(black, .1);
+  }
+
+  &_new:hover {
+    transform: translateY(-10px);
+  }
+}

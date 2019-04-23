@@ -1,0 +1,86 @@
+.modal{
+  width: 100vh;
+  height:100%;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-25%);
+  border-radius:4px;
+  margin:0;
+  padding:0;
+
+  &-close{
+    background-color: aqua;
+    display:block;
+    float:right;
+    margin-top: -1rem;
+  }
+
+  &-body--category{
+    margin: 1.5rem 2.5rem 3rem 2.5rem;
+    padding-bottom: .8rem;
+    background-color: $color-white;
+    border-bottom: 3px solid $color-light-grey;
+    overflow:auto;
+  }
+
+  &-content{
+    background-color: $color-white;
+    overflow-y:auto;
+    position:relative;
+    box-shadow: 0 1px 1.6rem rgba($color-black,0.15);
+  }
+  &-header{
+    margin: 1rem 1rem 0 1rem;
+    padding-bottom:0;
+    border:none;
+  }
+
+  &-footer{
+    border:none;
+    padding: 2rem;
+    overflow:auto;
+  }
+
+  &-body--gallery{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    margin: 0 2rem;
+    overflow: auto;
+    height: 0.25 * $page-height;
+    border-radius: 4px;
+    border: 2px dashed $color-light-grey;
+    transition: all 0.3s;
+    &:-moz-drag-over{
+      background-color: rgba($color-black, 0.2) ;
+
+    }
+  }
+  &-backdrop.in {
+    opacity: 0.75;}
+
+    .carousel{
+      height:0.4 * $page-height;
+      position: relative;
+      border-radius: 0;
+      &--image{
+        background-size: cover;
+        background-position: 50% 50%;
+        height: 100%;
+        width: 100%;
+      }
+      &--icon{
+        position:absolute;
+        margin-left: 2.5rem;
+        top:50%;
+        float: left;
+        height : 2.5rem;
+
+        &_left{
+          margin-left : -3.5rem;
+        }
+      }
+  }
+}

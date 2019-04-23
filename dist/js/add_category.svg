@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" width="41" height="41">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #aaaaaa } 
+	</style>
+	<g id="categories">
+		<g id="add category">
+			<path id="Shape 1" class="shp0" d="M23 11L19 11L19 19L11 19L11 23L19 23L19 31L23 31L23 23L31 23L31 19L23 19L23 11ZM21 1C9.96 1 1 9.96 1 21C1 32.04 9.96 41 21 41C32.04 41 41 32.04 41 21C41 9.96 32.04 1 21 1ZM21 37C12.18 37 5 29.82 5 21C5 12.18 12.18 5 21 5C29.82 5 37 12.18 37 21C37 29.82 29.82 37 21 37Z" />
+		</g>
+	</g>
+</svg>

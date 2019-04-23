@@ -1,0 +1,345 @@
+button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-transform: uppercase; }
+
+.new_cat--button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  margin: auto;
+  width: 100%;
+  height: 216px;
+  font-family: "Roboto", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #aaaaaa;
+  border: none;
+  background-color: #f9f9f9;
+  cursor: pointer; }
+  .new_cat--button:focus {
+    outline: none; }
+
+.btn-add {
+  display: block;
+  float: right;
+  font-family: "Roboto", serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  padding: .8rem 1.6rem;
+  color: #ffffff;
+  border-radius: 4px;
+  background-color: #41c78d;
+  cursor: pointer; }
+  .btn-add:focus {
+    outline: none; }
+
+.btn-close {
+  position: absolute;
+  right: 0;
+  top: -6.5rem;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: transparent;
+  padding-top: 3rem; }
+
+.modal_add--cat {
+  display: block;
+  float: left;
+  width: 70%;
+  letter-spacing: 1px;
+  padding: 8px 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #555555;
+  border: none; }
+  .modal_add--cat::placeholder {
+    color: #aaaaaa; }
+  .modal_add--cat:focus {
+    outline: none; }
+
+.modal_add--gallery {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+  .modal_add--gallery + label {
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #aaaaaa;
+    margin: 0;
+    padding: .8rem 2.5rem;
+    border: 3px solid #aaaaaa;
+    border-radius: 4px;
+    transition: all .4s; }
+  .modal_add--gallery:focus + label,
+  .modal_add--gallery + label:hover {
+    background-color: #aaaaaa;
+    color: #ffffff; }
+  .modal_add--gallery + label:active {
+    background-color: #555555;
+    color: #ffffff;
+    border-color: #555555; }
+  .modal_add--gallery + label {
+    cursor: pointer;
+    /* "hand" cursor */ }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: uppercase; }
+
+html {
+  font-size: 62.5%;
+  /*   1rem   */ }
+
+body {
+  box-sizing: border-box;
+  height: 1080px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  max-width: 2000px;
+  margin: auto;
+  position: relative; }
+
+.header_text {
+  display: block;
+  width: 73%;
+  color: #ffffff;
+  margin: auto; }
+
+.main {
+  margin: 9rem 15px 4rem 15px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  display: block;
+  font-size: 2.4rem; }
+
+.page_title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0 15px 2rem 15px;
+  padding-bottom: 1.5rem;
+  display: block;
+  transition: all .3s;
+  border-bottom: 2px solid rgba(238, 238, 238, 0.5); }
+
+.cat_name {
+  display: flex;
+  align-items: center;
+  color: #555555;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 1px; }
+
+.photo_count {
+  text-transform: lowercase;
+  color: #aaaaaa;
+  display: none;
+  opacity: 0;
+  transition: all .3s;
+  font-weight: 300;
+  font-size: 1.6rem; }
+
+.modal-title {
+  color: #555555;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding-bottom: 1.5rem;
+  display: block; }
+
+.modal_text--gallery {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #aaaaaa;
+  font-weight: 700;
+  text-align: center; }
+  .modal_text--gallery span {
+    font-weight: 500;
+    text-transform: lowercase; }
+
+.bart {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 25px 15px;
+  color: #aaaaaa;
+  font-weight: 500;
+  text-transform: lowercase;
+  display: block;
+  float: left; }
+
+.center {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle; }
+
+.header {
+  height: 345.6px;
+  position: relative; }
+  .header_blurred {
+    height: 100%;
+    background-size: cover;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    background: url("img/blanc.jpg") no-repeat center;
+    background-size: cover;
+    transition: all 0.5s; }
+  .header_blurred--img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.5s; }
+  .header_opacity {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0; }
+
+.wrapper {
+  width: 73%;
+  margin: auto;
+  margin-top: -108px;
+  z-index: 155; }
+
+.card {
+  margin: auto;
+  margin-bottom: 3rem;
+  position: relative;
+  background-color: #f9f9f9;
+  text-align: center;
+  height: 216px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: all .3s;
+  overflow: hidden; }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.3); }
+  .card:hover .card_title {
+    height: 35%; }
+  .card:hover .card_title .photo_count {
+    display: block;
+    opacity: 1; }
+  .card_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    position: absolute;
+    width: 100%;
+    background-color: #f9f9f9;
+    bottom: 0;
+    height: 25%;
+    transition: all .3s; }
+  .card_photo {
+    transition: all .3s;
+    height: 75%;
+    background-size: cover;
+    background-position: 50% 50%; }
+  .card_gallery {
+    transition: all .3s;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%; }
+  .card .cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+  .card_new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    height: 216px;
+    border-radius: 5px;
+    transition: all .3s;
+    box-shadow: 0 1px 0.5rem rgba(0, 0, 0, 0.1); }
+  .card_new:hover {
+    transform: translateY(-10px); }
+
+.right {
+  margin: 0 5px 5px 0; }
+
+.modal {
+  width: 100vh;
+  height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  border-radius: 4px;
+  margin: 0;
+  padding: 0; }
+  .modal-close {
+    background-color: aqua;
+    display: block;
+    float: right;
+    margin-top: -1rem; }
+  .modal-body--category {
+    margin: 1.5rem 2.5rem 3rem 2.5rem;
+    padding-bottom: .8rem;
+    background-color: #ffffff;
+    border-bottom: 3px solid #eeeeee;
+    overflow: auto; }
+  .modal-content {
+    background-color: #ffffff;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 1px 1.6rem rgba(0, 0, 0, 0.15); }
+  .modal-header {
+    margin: 1rem 1rem 0 1rem;
+    padding-bottom: 0;
+    border: none; }
+  .modal-footer {
+    border: none;
+    padding: 2rem;
+    overflow: auto; }
+  .modal-body--gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    margin: 0 2rem;
+    overflow: auto;
+    height: 270px;
+    border-radius: 4px;
+    border: 2px dashed #eeeeee;
+    transition: all 0.3s; }
+    .modal-body--gallery:-moz-drag-over {
+      background-color: rgba(0, 0, 0, 0.2); }
+  .modal-backdrop.in {
+    opacity: 0.75; }
+  .modal .carousel {
+    height: 432px;
+    position: relative;
+    border-radius: 0; }
+    .modal .carousel--image {
+      background-size: cover;
+      background-position: 50% 50%;
+      height: 100%;
+      width: 100%; }
+    .modal .carousel--icon {
+      position: absolute;
+      margin-left: 2.5rem;
+      top: 50%;
+      float: left;
+      height: 2.5rem; }
+      .modal .carousel--icon_left {
+        margin-left: -3.5rem; }

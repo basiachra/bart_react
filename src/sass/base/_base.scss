@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+html{
+  font-size: 62.5%;  /*   1rem   */
+}
+
+body{
+  box-sizing: border-box;
+  height: 1080px;
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  max-width: 2000px;
+  margin:auto;
+  position:relative;
+}

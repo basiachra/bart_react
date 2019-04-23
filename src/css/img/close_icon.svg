@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" width="29" height="29">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff } 
+	</style>
+	<g id="categories">
+		<path id="close icon" class="shp0" d="M29,3.82l-2.82,-2.82l-11.18,11.18l-11.18,-11.18l-2.82,2.82l11.18,11.18l-11.18,11.18l2.82,2.82l11.18,-11.18l11.18,11.18l2.82,-2.82l-11.18,-11.18z" />
+	</g>
+</svg>
