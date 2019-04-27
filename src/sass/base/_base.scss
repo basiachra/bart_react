@@ -8,7 +8,7 @@
 }
 
 html{
-  font-size: 62.5%;  /*   1rem   */
+  font-size: 70.5%;  /*   1rem   */
 }
 
 body{
@@ -16,7 +16,6 @@ body{
   height: 1080px;
   font-family: 'Roboto', sans-serif;
   background-color: $background-color;
-  max-width: 2000px;
-  margin:auto;
+  margin:0;
   position:relative;
 }

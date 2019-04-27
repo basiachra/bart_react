@@ -14,68 +14,97 @@ class Home extends React.Component {
             {
                 galleries: [],
                 count: 0,
-                img: "img/pexels-photo-261187.jpeg",
-                inputValue: ''
+                img: [],
+                ready:false,
+                inputValue: '',
+                api : "http://api.programator.sk"
             };
         this.createCard = this.createCard.bind(this);
         this.addCard = this.addCard.bind(this);
     }
 
-    componentDidMount() {
-        fetch(`http://localhost:3200/gallery`)
+    componentDidMount = async() =>{
+
+        await fetch(`${this.state.api}/gallery`)
             .then(res => res.json())
             .then(
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        galleries: result
+                        galleries: result.galleries
                     });
                 }
             );
-
+        this.getImages(this.state.galleries)
     };
 
-    addCard(path, name) {
-        const gal = {path:path, name:name};
-        fetch('http://localhost:3200/gallery', {
+    getImages = async (imags) => {
+        for (let i = 0; i < imags.length; i++) {
+            if (imags[i].image !== undefined) {
+                await fetch(`${this.state.api}/images/0x0/${imags[i].image.fullpath}`)
+                    .then(res => {
+                        return res;
+                    })
+                    .then(res => {
+                            this.state.img.push(res.url);
+                        }
+                    );
+            }
+            else{
+                this.state.img.push(require('../css/img/blanc.jpg'));
+            }
+
+            if(this.state.img.length === this.state.galleries.length){
+                this.state.ready = true;
+            }
+            this.forceUpdate();
+        }};
+
+
+    addCard = async(name) =>{
+        const resp = await fetch(`${this.state.api}/gallery`, {
                 method: 'post',
                 headers: {'Content-Type':'application/json'},
-                body: JSON.stringify(gal)
-            }).then(function(response) {
-                 return response.json();
-            });
+                body: JSON.stringify({"name": name})
+            })
 
-        this.state.galleries.push({gallery: {path : path, name : name}});
+        this.state.galleries.push(resp.json());
+        this.state.img.push(require('../css/img/blanc.jpg'));
         this.forceUpdate();
     }
+
+
 
      createCard(e) {
         e.preventDefault();
         const name = this.state.inputValue;
 
         if(typeof name === 'string' && name.length > 0) {
-            this.addCard(name,name);
+            this.addCard(name);
         }
     }
 
 
     render() {
-        if(!this.state.isLoaded){ return <div>Loading...</div>}
+        if(!this.state.ready){ return <div>Loading...</div>}
         else{
         return (
-            <div>
-                <Header name="kategórie" img={this.state.img}/>
+            <div className="content">
+                <Header name="kategórie" img={require('../css/img/pexels-photo-261187.jpeg')}/>
 
                 <div className="wrapper">
                     <div className="container-fluid" id="main">
-                        <div className="row" id="row">
+                        <div className="row">
                             {
-                                this.state.galleries.map((image) => (
-                                    <Gallery categories={image} type={'gallery'}/>
+                                this.state.galleries.map((image,index) => (
+                                    <Gallery categories={image} img={this.state.img[index]} key={index} type={'gallery'}/>
                                 ))}
-                            <Card type="new" name="category" msg="kategóriu"/>
+                            <div className="col-xl-3  col-lg-4  col-md-6 col-sm-6  ">
+                                <Card type="new" name="category" msg="kategóriu"/>
+                            </div>
                         </div>
                     </div>
+
 
                     <div id="modal_category" ref="CardForm" className="modal fade" role="dialog">
                         <div className="modal-dialog">

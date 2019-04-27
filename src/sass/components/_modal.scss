@@ -1,16 +1,13 @@
 .modal{
-  width: 100vh;
-  height:100%;
   position: fixed;
   top:50%;
   left:50%;
-  transform: translate(-50%,-25%);
+  transform: translate(-50%,-15%);
+  margin:auto auto;
   border-radius:4px;
-  margin:0;
-  padding:0;
+  padding:25px 0 0 0;
 
   &-close{
-    background-color: aqua;
     display:block;
     float:right;
     margin-top: -1rem;
@@ -58,29 +55,36 @@
 
     }
   }
-  &-backdrop.in {
-    opacity: 0.75;}
+  &-backdrop.in{
+    opacity: 0.75;
+  }
+  &-carousel{
+    max-width:60vw;
+    height:auto;
+    margin:auto;
+  }
 
-    .carousel{
-      height:0.4 * $page-height;
-      position: relative;
-      border-radius: 0;
-      &--image{
-        background-size: cover;
-        background-position: 50% 50%;
-        height: 100%;
-        width: 100%;
-      }
-      &--icon{
-        position:absolute;
-        margin-left: 2.5rem;
-        top:50%;
-        float: left;
-        height : 2.5rem;
+  .carousel{
+    max-width:80vw;
+    position: relative;
+    border-radius: 0;
 
-        &_left{
-          margin-left : -3.5rem;
-        }
+    &--image{
+      background-size: cover;
+      background-position: 50% 50%;
+      height:100%;
+      width:100%;
+    }
+    &--icon{
+      position:absolute;
+      margin-left: 2.5rem;
+      top:50%;
+      float: left;
+      height : 2.5rem;
+
+      &_left{
+        margin-left : -3.5rem;
       }
+    }
   }
 }

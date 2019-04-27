@@ -9,15 +9,15 @@ const Button = (props) => {
 
     if(props.type === "close"){
         return (
-            <button type="button" className="btn-close" data-dismiss="modal">
-                <img src={close} alt="close"/>
+            <button type="button"  className="btn-close" data-dismiss="modal">
+                <img className="right" src={close} alt="close"/>
                 zavrieť
             </button>
         )
     }
     else if(props.type ==="new"){
         return(
-                <button className="new_cat--button" data-toggle="modal" data-target={"#modal_" + props.name}>
+                <button className="new_cat--button"  data-toggle="modal" data-target={"#modal_" + props.name}>
                         {
                             props.name === 'gallery' ?
                                 <img src={add_images} alt="add"/>

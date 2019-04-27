@@ -6,7 +6,7 @@ const Header = (props) => {
         <div id="header">
         <div className="header">
             <div className="header_blurred" id="main_photo">
-                <img src={require('../css/' + props.img )} alt="backgroundImage" className=" img-responsive header_blurred--img"/>
+                <img src={ props.img } alt="backgroundImage" className=" img-responsive header_blurred--img"/>
             </div>
             <div className="header_opacity">
                 <div className="header_text">
