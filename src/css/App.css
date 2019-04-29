@@ -7330,6 +7330,14 @@ button {
     overflow-y: auto;
     position: relative;
     box-shadow: 0 1px 1.6rem rgba(0, 0, 0, 0.15); }
+    .modal-content--carousel {
+      background-color: transparent;
+      padding: 0 5rem;
+      max-width: 80vw;
+      position: relative;
+      border-radius: 0;
+      box-shadow: none;
+      border: none; }
   .modal-header {
     margin: 1rem 1rem 0 1rem;
     padding-bottom: 0;
@@ -7339,24 +7347,22 @@ button {
     padding: 2rem;
     overflow: auto; }
   .modal-body--gallery {
+    margin: auto;
+    height: auto;
+    width: 80%;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column nowrap;
-    margin: 0 2rem;
     overflow: auto;
-    height: 270px;
     border-radius: 4px;
     border: 2px dashed #eeeeee;
     transition: all 0.3s; }
     .modal-body--gallery:-moz-drag-over {
       background-color: rgba(0, 0, 0, 0.2); }
-  .modal-backdrop.in {
+  .modal-backdrop.in, .modal-backdrop {
     opacity: 0.75; }
-  .modal-carousel {
-    max-width: 60vw;
-    height: auto;
-    margin: auto; }
   .modal .carousel {
     max-width: 80vw;
     position: relative;
@@ -7371,7 +7377,8 @@ button {
       margin-left: 2.5rem;
       top: 50%;
       float: left;
-      height: 2.5rem; }
+      height: 2.5rem;
+      z-index: 7500; }
       .modal .carousel--icon_left {
         margin-left: -3.5rem; }
 
@@ -7381,7 +7388,7 @@ button {
     /*   1rem   */ }
   .icon {
     height: 1.5rem; }
-    .icon-add {
+    .icon-big {
       height: 3rem; }
   .header_text {
     width: 80vw; }

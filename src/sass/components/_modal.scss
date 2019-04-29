@@ -12,6 +12,7 @@
     max-height: 50vh;
   }
 
+
   &-close{
     display:block;
     float:right;
@@ -32,6 +33,15 @@
     overflow-y:auto;
     position:relative;
     box-shadow: 0 1px 1.6rem rgba($color-black,0.15);
+    &--carousel{
+      background-color: transparent;
+      padding: 0 5rem;
+      max-width:80vw;
+      position: relative;
+      border-radius: 0;
+      box-shadow: none;
+      border:none;
+    }
   }
   &-header{
     margin: 1rem 1rem 0 1rem;
@@ -46,13 +56,15 @@
   }
 
   &-body--gallery{
+    margin:auto;
+    height: auto;
+    width: 80%;
+    padding:20px;
     display:flex;
     align-items: center;
     justify-content: center;
     flex-flow: column nowrap;
-    margin: 0 2rem;
     overflow: auto;
-    height: 0.25 * $page-height;
     border-radius: 4px;
     border: 2px dashed $color-light-grey;
     transition: all 0.3s;
@@ -61,13 +73,10 @@
 
     }
   }
-  &-backdrop.in{
+  &-backdrop.in,
+  &-backdrop
+  {
     opacity: 0.75;
-  }
-  &-carousel{
-    max-width:60vw;
-    height:auto;
-    margin:auto;
   }
 
   .carousel{
@@ -75,7 +84,7 @@
     position: relative;
     border-radius: 0;
 
-    &--image{
+   &--image{
       background-size: cover;
       background-position: 50% 50%;
       height:100%;
@@ -87,6 +96,7 @@
       top:50%;
       float: left;
       height : 2.5rem;
+      z-index:7500;
 
       &_left{
         margin-left : -3.5rem;

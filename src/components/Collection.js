@@ -147,7 +147,7 @@ class collection extends React.Component {
                                     {({getRootProps, getInputProps}) => {
                                         return (
                                             <div className="modal-body--gallery" {...getRootProps()}>
-                                                <img className="right" src={add_images} alt="add"/>
+                                                <img className="right icon-big" src={add_images} alt="add"/>
                                                 <p className="modal_text--gallery drop-active">Sem presunte fotky<br/>
                                                     <span>alebo</span></p>
                                                 <input {...getInputProps()} type="file" id="file"
@@ -161,19 +161,21 @@ class collection extends React.Component {
                                 <div className="modal-footer">
                                     <button type="button" className="btn-add" data-dismiss="modal"
                                             onClick={this.createCard}>
-                                        <img className="right" src={add} alt="add"/>
+                                        <img className="right icon" src={add} alt="add"/>
                                         pridať
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="modal_image" className="modal fade modal-image" role="dialog" tabIndex="-1">
+                    <div id="modal_image" className="modal fade" role="dialog" tabIndex="-1">
                         <div className="modal-dialog">
                             <Button type="close"/>
-                            <div className=" modal-carousel">
-                                <Carousel images={this.state.images} />
-                            </div>
+                            <div className="modal-content modal-content--carousel">
+
+                                    <Carousel images={this.state.images} />
+
+                        </div>
                         </div>
                     </div>
                 </div>
