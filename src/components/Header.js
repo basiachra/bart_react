@@ -2,11 +2,17 @@ import React from 'react'
 import '../css/App.css';
 
 const Header = (props) => {
+    let img;
+
+    if(props.img === undefined) img = require('../css/img/blanc.jpg');
+    else img = props.img;
+
+
     return (
         <div id="header">
         <div className="header">
             <div className="header_blurred" id="main_photo">
-                <img src={ props.img } alt="backgroundImage" className=" img-responsive header_blurred--img"/>
+                <img src={ img } alt="backgroundImage" className=" img-responsive header_blurred--img"/>
             </div>
             <div className="header_opacity">
                 <div className="header_text">

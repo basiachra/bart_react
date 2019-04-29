@@ -7116,7 +7116,7 @@ body {
 
 .header {
   width: 100vw;
-  height: 345.6px;
+  height: 64vh;
   position: relative; }
   .header_blurred {
     height: 100%;
@@ -7413,7 +7413,7 @@ button {
   .main {
     margin: 7vw 15px 2vw 15px; }
   .card {
-    height: 15vw;
+    height: 17vw;
     max-width: 45vw; }
   .header {
     height: 25vw; }

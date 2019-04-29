@@ -8,7 +8,7 @@ export class Carousel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentImageIndex: 0,
+            index: 0,
             images: this.props.images,
             arrowNext: arrowRight,
             arrowPrev: arrowLeft
@@ -37,28 +37,28 @@ export class Carousel extends React.Component {
 
     prevSlide = () => {
         const lastIndex = this.state.images.length - 1;
-        const resetIndex = this.state.currentImageIndex === 0;
-        const index = resetIndex ? lastIndex : this.state.currentImageIndex - 1;
+        const resetIndex = this.state.index;
+        const index = resetIndex ? lastIndex : this.state.index - 1;
         this.setState({
-            currentImageIndex: index
+            index: index
         })
     };
     nextSlide = () => {
         const lastIndex = this.state.images.length - 1;
-        const resetIndex = this.state.currentImageIndex === lastIndex;
+        const resetIndex = this.state.index === lastIndex;
         const index = resetIndex ? 0 : this.state.currentImageIndex + 1;
         this.setState({
-            currentImageIndex: index
+            index: index
         });
     };
 
     render() {
-        const index = this.state.currentImageIndex;
-        if(this.state.images[index] === undefined){ return null}
+        //console.log(this.state.images)
+        if(this.state.images[this.state.index] === undefined){ return null}
             return (
                 <div className="carousel">
                     <img  className="carousel--icon carousel--icon_left" src={this.state.arrowPrev} onClick={this.prevSlide} alt="arrow-left"/>
-                        <img className="carousel--image" key={index} src={this.state.images[index]} alt=" "/>
+                        <img className="carousel--image" key={this.state.index} src={this.state.images[this.state.index]} alt=" "/>
                     <img className="carousel--icon icon" src={this.state.arrowNext} onClick={this.nextSlide} alt="arrow-right"/>
                 </div>
             );

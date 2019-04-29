@@ -8,7 +8,7 @@ const Card = (props) => {
         return (
 
                 <div className="card" >
-                    <div className={"card_" + props.type}  data-toggle="modal" data-target={"#modal_image"}>
+                    <div className={"card_" + props.type} data-toggle="modal" data-target={"#modal_image"}>
                         <img src={props.img} alt={props.name} className={"cover"} />
                     </div>
                 </div>

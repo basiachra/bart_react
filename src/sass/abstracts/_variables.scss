@@ -9,10 +9,10 @@ $color-grey: #555555;
 $color-black: #000000;
 $color-green: #41c78d;
 
-$page-height:1080px;
+$page-height: 2 * 100vh;
 
 
-$card-height: 0.2 * $page-height;
+$card-height: 0.2 * 1080px;
 
 $grid-breakpoints: (
         xs: 0px,

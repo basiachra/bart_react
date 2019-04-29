@@ -12,54 +12,15 @@ class Home extends React.Component {
         super(props);
         this.state =
             {
-                galleries: [],
+                galleries: this.props.galleries,
                 count: 0,
-                img: [],
-                ready:false,
+                img: this.props.img,
                 inputValue: '',
                 api : "http://api.programator.sk"
             };
         this.createCard = this.createCard.bind(this);
         this.addCard = this.addCard.bind(this);
     }
-
-    componentDidMount = async() =>{
-
-        await fetch(`${this.state.api}/gallery`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        galleries: result.galleries
-                    });
-                }
-            );
-        this.getImages(this.state.galleries)
-    };
-
-    getImages = async (imags) => {
-        for (let i = 0; i < imags.length; i++) {
-            if (imags[i].image !== undefined) {
-                await fetch(`${this.state.api}/images/0x0/${imags[i].image.fullpath}`)
-                    .then(res => {
-                        return res;
-                    })
-                    .then(res => {
-                            this.state.img.push(res.url);
-                        }
-                    );
-            }
-            else{
-                this.state.img.push(require('../css/img/blanc.jpg'));
-            }
-
-            if(this.state.img.length === this.state.galleries.length){
-                this.state.ready = true;
-            }
-            this.forceUpdate();
-        }};
-
 
     addCard = async(name) =>{
         const resp = await fetch(`${this.state.api}/gallery`, {
@@ -68,12 +29,11 @@ class Home extends React.Component {
                 body: JSON.stringify({"name": name})
             })
 
-        this.state.galleries.push(resp.json());
+        console.log(resp);
+        this.state.galleries.push({path: name ,name : name});
         this.state.img.push(require('../css/img/blanc.jpg'));
-        this.forceUpdate();
+        this.setState(this.state);
     }
-
-
 
      createCard(e) {
         e.preventDefault();
@@ -84,10 +44,7 @@ class Home extends React.Component {
         }
     }
 
-
     render() {
-        if(!this.state.ready){ return <div>Loading...</div>}
-        else{
         return (
             <div className="content">
                 <Header name="kategórie" img={require('../css/img/pexels-photo-261187.jpeg')}/>
@@ -127,6 +84,6 @@ class Home extends React.Component {
                 </div>
             </div>
         )}
-}}
+}//}
 
 export default Home;

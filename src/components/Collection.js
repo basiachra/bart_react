@@ -11,9 +11,8 @@ import {Carousel} from "./Carousel";
 import add from '../css/img/add_icon.svg';
 import add_images from '../css/img/add_gallery.svg';
 import back from '../css/img/back_icon.svg';
-import Spinner from "./Spinner";
 
-class collection extends React.Component {
+class Collection extends React.Component {
     constructor(props){
         super(props);
 
@@ -24,14 +23,14 @@ class collection extends React.Component {
         this.getImages = this.getImages.bind(this);
         this.state =
             {
-                isLoaded: false,
-                isLoadedImages: false,
+                //isLoaded: false,
                 ready: false,
                 name : props.match.params.name,
                 selectedFiles: [],
                 galleries: [],
                 images: [],
-                api: "http://api.programator.sk"
+                api: "http://api.programator.sk",
+                apiImg: "http://api.programator.sk/images/0x0"
             };
     }
     componentDidMount = async() =>{
@@ -40,13 +39,13 @@ class collection extends React.Component {
             .then(
                 (result) => {
                     this.setState({
-                        isLoaded: true,
+                       // isLoaded: true,
                         galleries: result
                     });
                 },
                 (error) => {
                     this.setState({
-                        isLoaded: true,
+                        //isLoaded: true,
                         error
                     });
                 }
@@ -67,41 +66,38 @@ class collection extends React.Component {
                     );
         }
         this.state.ready = true;
-        this.forceUpdate();
+        this.setState(this.state);
     };
-
 
     handleChange = event =>
     {
         this.setState({selectedFiles : event.target.files});
     };
 
-    addCard(fd ) {
-            fetch(`${this.state.api}/gallery/${this.state.name}`, {
+    addCard = async(fd,name) => {
+        const res = await fetch(`${this.state.api}/gallery/${this.state.name}`, {
             method: 'post',
-            headers: {'Content-Type':'multipart/form-data; boundary=--boundary'},
             body: fd
         }).then(function(response) {
-            return response;
+            console.log( response);
         });
+        console.log(res)
+        this.state.images.push(`${this.state.apiImg}/${this.state.name}/${name}`)
 
-        const gal = {name: this.state.name, path:this.state.name};
-        this.state.galleries.push(...[{gallery: gal, images: this.state.selectedFiles}]);
-        this.forceUpdate();
+        console.log(this.state.images)
+        this.setState(this.state);
     }
 
     createCard(e) {
         e.preventDefault();
-
-        const fd = new FormData();
-        let l =0;
+        let l = 0;
         while(this.state.selectedFiles.length > l){
-              fd.append('image[]',this.state.selectedFiles[l]);
-              fd.append('filename[]',this.state.selectedFiles[l].name);
-              fd.append('gallery[]',`${this.state.name}`);
+            const fd = new FormData();
+            fd.append('file',this.state.selectedFiles[l]);
+
+            this.addCard(fd,this.state.selectedFiles[l].name)
             l++;
-        }
-        this.addCard(fd)
+         }
     };
 
     onDrop = (files) => {
@@ -110,9 +106,10 @@ class collection extends React.Component {
 
     render() {
         if (!this.state.ready) {
-            return <Spinner/>
+            return <div>Downloading images</div>
         }
         else {
+            console.log(this.state.images)
             return (
                 <div className="content">
                     <Header name={
@@ -168,19 +165,18 @@ class collection extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div id="modal_image" className="modal fade" role="dialog" tabIndex="-1">
-                        <div className="modal-dialog">
-                            <Button type="close"/>
-                            <div className="modal-content modal-content--carousel">
-
-                                    <Carousel images={this.state.images} />
-
-                        </div>
+                        <div id="modal_image" className="modal fade" role="dialog" tabIndex="-1">
+                            <div className="modal-dialog">
+                                <Button type="close"/>
+                                <div className="modal-content modal-content--carousel">
+                                    <Carousel images={this.state.images} index={this.state.index}/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             );
     }};
 }
-export default collection
+export default Collection
+
