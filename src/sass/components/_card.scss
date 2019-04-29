@@ -26,26 +26,7 @@
   box-shadow: 0 1px 4px rgba($color-black,0.15);
   transition: all .3s;
   overflow: hidden;
-  @media only screen and (min-width: 1823px)  {
-    height: 15vw;
-    max-width: 80vw;
-  }
-  @media only screen and (max-width: 1823px)  {
-    height: 15vw;
-    max-width: 1.5 * 30vw;
-  }
-  @media only screen and (max-width: 1223px)  {
-    height: 20vw;
-    max-width: 60vh;
-  }
-  @media only screen and (max-width: 767px)  {
-    height: 45vw;
-    max-width: 80vh;
-  }
-  @media only screen and (max-width: 480px)  {
-    height: 60vw;
-    max-width: 80vh;
-  }
+
 
   &:hover {
     transform: translateY(-10px);

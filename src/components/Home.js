@@ -99,9 +99,8 @@ class Home extends React.Component {
                                 this.state.galleries.map((image,index) => (
                                     <Gallery categories={image} img={this.state.img[index]} key={index} type={'gallery'}/>
                                 ))}
-                            <div className="col-xl-3  col-lg-4  col-md-6 col-sm-6  ">
+
                                 <Card type="new" name="category" msg="kategóriu"/>
-                            </div>
                         </div>
                     </div>
 

@@ -117,7 +117,7 @@ class collection extends React.Component {
                 <div className="content">
                     <Header name={
                         <Link to={`./`} style={{textDecoration: 'none', color: 'white'}}>
-                            <img className="right" src={back} alt="back"/>
+                            <img className=" icon right" src={back} alt="back"/>
                             {this.state.name}
                         </Link>
                     } img={this.state.images[0]}/>
@@ -128,9 +128,7 @@ class collection extends React.Component {
                                     this.state.images.map((image, index) => (
                                         <Gallery name={this.state.name} categories={image} key={index} type='images'/>))
                                 }
-                                <div className="col-xl-3  col-lg-4  col-md-6 col-sm-6  ">
                                     <Card type="new" name="gallery" msg="fotky"/>
-                                </div>
                             </div>
                         </div>
                         <p className="bart">webdesign bart.sk</p>

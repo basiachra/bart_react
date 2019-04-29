@@ -10,7 +10,7 @@ const Button = (props) => {
     if(props.type === "close"){
         return (
             <button type="button"  className="btn-close" data-dismiss="modal">
-                <img className="right" src={close} alt="close"/>
+                <img className="right icon-big" src={close} alt="close"/>
                 zavrieť
             </button>
         )
@@ -20,8 +20,8 @@ const Button = (props) => {
                 <button className="new_cat--button"  data-toggle="modal" data-target={"#modal_" + props.name}>
                         {
                             props.name === 'gallery' ?
-                                <img src={add_images} alt="add"/>
-                                : <img src={add_category} alt="add"/>}
+                                <img className="icon-big" src={add_images} alt="add"/>
+                                : <img className="icon-big" src={add_category} alt="add"/>}
                         Pridať {props.msg}
                 </button>
         )

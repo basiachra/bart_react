@@ -7,10 +7,10 @@ $color-grey-light: #bababa;
 $color-grey-icons: #aaaaaa;
 $color-grey: #555555;
 $color-black: #000000;
-
 $color-green: #41c78d;
 
 $page-height:1080px;
+
 
 $card-height: 0.2 * $page-height;
 
@@ -18,19 +18,30 @@ $grid-breakpoints: (
         xs: 0px,
         sm: 480px,
         md: 768px,
-        lg: 1224px,
+        lg: 1324px,
         xl: 1824px
 );
 
-$container-max-widths: (
-        sm: 480px,
-        md: 760px,
-        lg: 1200px,
-        xl: 1800px
-);
 
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
 
+// Small screen / tablet
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
 
+// Medium screen / desktop
+$screen-md:                  1324px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1824px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
 
 
 

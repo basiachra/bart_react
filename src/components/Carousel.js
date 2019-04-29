@@ -59,7 +59,7 @@ export class Carousel extends React.Component {
                 <div className="carousel">
                     <img  className="carousel--icon carousel--icon_left" src={this.state.arrowPrev} onClick={this.prevSlide} alt="arrow-left"/>
                         <img className="carousel--image" key={index} src={this.state.images[index]} alt=" "/>
-                    <img className="carousel--icon" src={this.state.arrowNext} onClick={this.nextSlide} alt="arrow-right"/>
+                    <img className="carousel--icon icon" src={this.state.arrowNext} onClick={this.nextSlide} alt="arrow-right"/>
                 </div>
             );
     }

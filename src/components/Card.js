@@ -32,7 +32,7 @@ const Card = (props) => {
     }
     else if(props.type ==="new"){
         return(
-            <div className="col-lg-3  col-md-4 col-sm-6">
+            <div className="col-xl-3  col-lg-4  col-md-6 col-sm-6 ">
                 <div className="card card_new ">
                     <Button type="new" name={props.name}/>
                 </div>

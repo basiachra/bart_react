@@ -7,10 +7,17 @@
   border-radius:4px;
   padding:25px 0 0 0;
 
+  &-dialog{
+    max-width: 50vw;
+    max-height: 50vh;
+  }
+
   &-close{
     display:block;
     float:right;
     margin-top: -1rem;
+    max-width:80vw;
+    margin-right:auto;
   }
 
   &-body--category{
@@ -20,7 +27,6 @@
     border-bottom: 3px solid $color-light-grey;
     overflow:auto;
   }
-
   &-content{
     background-color: $color-white;
     overflow-y:auto;

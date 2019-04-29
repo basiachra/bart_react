@@ -1,0 +1,121 @@
+@include respond-above(xl){
+  html{
+    font-size: 0.7vw;  /*   1rem   */
+  }
+  .icon{
+    height: 1.5rem;
+    &-big{
+      height: 3rem;
+    }
+  }
+  .header_text{
+    width: 80vw;
+  }
+  .main{
+    margin: 9rem 15px 4rem 15px;
+  }
+  .card{
+    height: 10vw;
+    max-width: 80vw;
+  }
+
+  .header{
+    height: 25vw;
+    max-height: 50vh;
+  }
+  .wrapper{
+    width: 80vw;
+    margin: auto;
+    margin-top: -5vw;
+  }
+  .modal{
+    padding: 2.5rem 0 0 0;
+  }
+}
+
+@include respond-below(xl){
+  .header_text{
+    width: 80vw;
+  }
+  .main{
+    margin: 7vw 15px 2vw 15px;
+  }
+  .card{
+    height: 15vw;
+    max-width:45vw;
+  }
+
+  .header{
+    height: 25vw;
+  }
+
+  .wrapper{
+    width: 80vw;
+    margin-top: -7vw;
+  }
+}
+
+@include respond-below(lg){
+  .header_text{
+    width: 85vw;
+  }
+  .main{
+    margin: 8vw 15px 3vw 15px;
+  }
+
+  .card{
+    height: 20vw;
+    max-width: 60vh;
+  }
+  .header{
+    height: 35vw;
+  }
+  .wrapper{
+    width: 85vw;
+    margin-top: -10vw;
+  }
+}
+
+@include respond-below(md){
+  .header_text{
+    width: 90vw;
+  }
+  .main{
+    margin: 12vw 15px 4vw 15px;
+  }
+  .card{
+    height: 35vw;
+    max-width: 80vh;
+  }
+  .header{
+    height: 40vw;
+  }
+  .wrapper{
+    width: 90vw;
+    margin-top: -8vw;
+  }
+  .modal{
+    padding:50px 0 0 0;
+  }
+}
+
+@include respond-below(sm){
+  .card{
+    height: 60vw;
+    max-width: 80vh;
+  }
+  .main{
+    margin: 15vw 15px 10vw 15px;
+  }
+
+  .header{
+    height: 80vw;
+  }
+  .wrapper{
+    width: 90vw;
+    margin-top: -30vw;
+  }
+  .modal{
+    padding:40px 0 0 0;
+  }
+}
