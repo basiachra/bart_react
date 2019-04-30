@@ -13,7 +13,7 @@ import add_images from '../css/img/add_gallery.svg';
 import back from '../css/img/back_icon.svg';
 
 class Collection extends React.Component {
-    constructor(props){
+    constructor(props){console.log(props)
         super(props);
 
         this.createCard = this.createCard.bind(this);
@@ -23,33 +23,19 @@ class Collection extends React.Component {
         this.getImages = this.getImages.bind(this);
         this.state =
             {
-                //isLoaded: false,
+                index: 0,
                 ready: false,
                 name : props.match.params.name,
                 selectedFiles: [],
-                galleries: [],
+                galleries: props.galleries[props.galleries.findIndex(x => x.gallery.path === props.match.params.name)],
                 images: [],
                 api: "http://api.programator.sk",
                 apiImg: "http://api.programator.sk/images/0x0"
             };
     }
+
     componentDidMount = async() =>{
-        await fetch(`${this.state.api}/gallery/${this.state.name}`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                       // isLoaded: true,
-                        galleries: result
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        //isLoaded: true,
-                        error
-                    });
-                }
-            );
+       console.log(this.state.galleries)
         if(this.state.galleries.images !== undefined)
             this.getImages(this.state.galleries.images)
     };
@@ -58,7 +44,7 @@ class Collection extends React.Component {
 
         for (let i = 0; i < imags.length; i++) {
 
-             await fetch(`${this.state.api}/images/0x0/${imags[i].fullpath}`)
+             await fetch(`${this.state.apiImg}/${imags[i].fullpath}`)
                     .then(res => {return res; })
                     .then(res => {
                             this.state.images.push(res.url);
@@ -82,7 +68,7 @@ class Collection extends React.Component {
             console.log( response);
         });
         console.log(res)
-        this.state.images.push(`${this.state.apiImg}/${this.state.name}/${name}`)
+        this.state.images.push(`${this.state.apiImg}/${this.state.name}/${name}`);
 
         console.log(this.state.images)
         this.setState(this.state);
@@ -105,11 +91,10 @@ class Collection extends React.Component {
     };
 
     render() {
-        if (!this.state.ready) {
+       /* if (!this.state.ready) {
             return <div>Downloading images</div>
         }
-        else {
-            console.log(this.state.images)
+        else {*/
             return (
                 <div className="content">
                     <Header name={
@@ -118,6 +103,9 @@ class Collection extends React.Component {
                             {this.state.name}
                         </Link>
                     } img={this.state.images[0]}/>
+                    {
+                        !this.state.ready ? <div className="loadingDiv"> <p className={"loading"}>Downloading images</p></div>:
+
                     <div className="wrapper">
                         <div className="container-fluid" id="main">
                             <div className="row">
@@ -128,8 +116,7 @@ class Collection extends React.Component {
                                     <Card type="new" name="gallery" msg="fotky"/>
                             </div>
                         </div>
-                        <p className="bart">webdesign bart.sk</p>
-
+                        <p className="bart" >webdesign bart.sk</p>
 
 
                     <div id="modal_gallery" className="modal fade" role="dialog" tabIndex="-1">
@@ -174,9 +161,11 @@ class Collection extends React.Component {
                             </div>
                         </div>
                     </div>
+                    }
                 </div>
             );
     }};
-}
+
+
 export default Collection
 

@@ -5,13 +5,14 @@ import {Link} from "react-router-dom";
 export class Gallery extends React.Component {
 
     cardItem = (categories, url, index) => {
+        let count = categories.count;
         if(url === undefined)
             url = "blanc.jpg";
-       /* if(count === 1) count = " 1 fotka"
+        if(count === 1) count = " 1 fotka"
         else if(count > 1 && count < 5) count = `${count} fotky`
-        else if(count > 4 || count === 0)count = `${count} fotiek`*/
+        else if(count > 4 || count === 0)count = `${count} fotiek`
 
-        return <CardItem name={categories.name} path={categories.path} key={index} type='photo' img={url} />;
+        return <CardItem name={categories.name} count={count} path={categories.path} key={index} type='photo' img={url} />;
     };
 
     cardItem2 = (url, name, index) => {
@@ -33,12 +34,12 @@ export class Gallery extends React.Component {
     };
 }
 
-export const CardItem = ({ name, type, img, path,click}, key) => {
+export const CardItem = ({ name, count, type, img, path,click}, key) => {
     if (type === 'photo') {
         return (
             <div className="col-xl-3  col-lg-4  col-md-6 col-sm-6  ">
             <Link to={`./${path}`}>
-                <Card type={type} name={name} img={img} key={key} />
+                <Card type={type} count={count} name={name} img={img} key={key} />
             </Link>
             </div>
         );
@@ -46,7 +47,7 @@ export const CardItem = ({ name, type, img, path,click}, key) => {
     if (type === 'gallery') {
         return (
             <div className="col-xl-3  col-lg-4  col-md-6 col-sm-6 ">
-            <Card type={type} name={name} img={img} key={key}/>
+            <Card type={type} name={name} img={img} key={key} index={key}/>
             </div>
         );
     }

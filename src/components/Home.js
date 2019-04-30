@@ -27,13 +27,13 @@ class Home extends React.Component {
                 method: 'post',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({"name": name})
-            })
+            });
 
         console.log(resp);
         this.state.galleries.push({path: name ,name : name});
         this.state.img.push(require('../css/img/blanc.jpg'));
         this.setState(this.state);
-    }
+    };
 
      createCard(e) {
         e.preventDefault();
@@ -48,7 +48,6 @@ class Home extends React.Component {
         return (
             <div className="content">
                 <Header name="kategórie" img={require('../css/img/pexels-photo-261187.jpeg')}/>
-
                 <div className="wrapper">
                     <div className="container-fluid" id="main">
                         <div className="row">

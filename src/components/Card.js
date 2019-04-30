@@ -9,25 +9,22 @@ const Card = (props) => {
 
                 <div className="card" >
                     <div className={"card_" + props.type} data-toggle="modal" data-target={"#modal_image"}>
-                        <img src={props.img} alt={props.name} className={"cover"} />
+                        <img src={props.img} alt={props.name} className={"cover cover_gallery"} />
                     </div>
                 </div>
-
         )
     }
     else if(props.type === "photo"){
         return (
-
-                <div className="card">
-                    <div className={"card_" + props.type }>
-                        <img src={props.img} alt="GalleryPhoto" className={"cover"}/>
-                    </div>
-                    <div className="card_title">
-                        <h4 className="cat_name">{props.name}</h4>
-                        <p className="photo_count">{props.count}</p>
-                    </div>
+            <div className="card">
+                <div className={"card_" + props.type }>
+                    <img src={props.img} alt="GalleryPhoto" className={"cover"}/>
                 </div>
-
+                <div className="card_title">
+                    <h4 className="cat_name">{props.name}</h4>
+                    <p className="photo_count">{props.count}</p>
+                </div>
+            </div>
         )
     }
     else if(props.type ==="new"){

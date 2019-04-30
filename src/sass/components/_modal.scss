@@ -12,7 +12,6 @@
     max-height: 50vh;
   }
 
-
   &-close{
     display:block;
     float:right;
@@ -36,7 +35,6 @@
     &--carousel{
       background-color: transparent;
       padding: 0 5rem;
-      max-width:80vw;
       position: relative;
       border-radius: 0;
       box-shadow: none;
@@ -59,7 +57,7 @@
     margin:auto;
     height: auto;
     width: 80%;
-    padding:20px;
+    padding:8rem 20px;
     display:flex;
     align-items: center;
     justify-content: center;
