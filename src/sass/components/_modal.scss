@@ -1,6 +1,6 @@
 .modal{
   position: fixed;
-  top:50%;
+  top:25%;
   left:50%;
   transform: translate(-50%,-15%);
   margin:auto auto;
@@ -8,8 +8,8 @@
   padding:25px 0 0 0;
 
   &-dialog{
-    max-width: 50vw;
-    max-height: 50vh;
+    max-width: 80vw;
+    max-height: 70vh;
   }
 
   &-close{
@@ -27,12 +27,14 @@
     border-bottom: 3px solid $color-light-grey;
     overflow:auto;
   }
+
   &-content{
     background-color: $color-white;
     overflow-y:auto;
     position:relative;
     box-shadow: 0 1px 1.6rem rgba($color-black,0.15);
     &--carousel{
+      max-height: 70vh;
       background-color: transparent;
       padding: 0 5rem;
       position: relative;
@@ -68,7 +70,6 @@
     transition: all 0.3s;
     &:-moz-drag-over{
       background-color: rgba($color-black, 0.2) ;
-
     }
   }
   &-backdrop.in,
@@ -78,16 +79,19 @@
   }
 
   .carousel{
-    max-width:80vw;
+    margin:auto;
+    max-width: 80vw;
+    max-height: 70vh;
     position: relative;
     border-radius: 0;
 
    &--image{
-      background-size: cover;
+      background-size: contain;
       background-position: 50% 50%;
-      height:100%;
-      width:100%;
+      max-height:70vh;
+      max-width:100%;
     }
+
     &--icon{
       position:absolute;
       margin-left: 2.5rem;

@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "./Card";
 import {Link} from "react-router-dom";
+import Card from "./Card";
 
 export class Gallery extends React.Component {
 
@@ -8,9 +8,9 @@ export class Gallery extends React.Component {
         let count = categories.count;
         if(url === undefined)
             url = "blanc.jpg";
-        if(count === 1) count = " 1 fotka"
-        else if(count > 1 && count < 5) count = `${count} fotky`
-        else if(count > 4 || count === 0)count = `${count} fotiek`
+        if(count === 1) count = " 1 fotka";
+        else if(count > 1 && count < 5) count = `${count} fotky`;
+        else if(count > 4 || count === 0)count = `${count} fotiek`;
 
         return <CardItem name={categories.name} count={count} path={categories.path} key={index} type='photo' img={url} />;
     };

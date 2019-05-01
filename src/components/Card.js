@@ -1,17 +1,15 @@
 import React from "react";
-import '../css/App.css';
 import Button from "./Button";
 
 const Card = (props) => {
 
     if(props.type === "gallery"){
         return (
-
-                <div className="card" >
-                    <div className={"card_" + props.type} data-toggle="modal" data-target={"#modal_image"}>
-                        <img src={props.img} alt={props.name} className={"cover cover_gallery"} />
-                    </div>
+            <div className="card" >
+                <div className={"card_" + props.type} data-toggle="modal" data-target={"#modal_image"}>
+                    <img src={props.img} alt={props.name} className={"cover cover_gallery"} />
                 </div>
+            </div>
         )
     }
     else if(props.type === "photo"){

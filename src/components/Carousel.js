@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/App.css';
 import arrowRight from '../css/img/next_icon.svg';
 import arrowLeft from '../css/img/prev_icon.svg';
 
@@ -36,13 +35,14 @@ export class Carousel extends React.Component {
     }
 
     prevSlide = () => {
-        const lastIndex = this.state.images.length - 1;
-        const resetIndex = this.state.index;
+        let lastIndex = this.state.images.length - 1;
+        const resetIndex = this.state.index === 0;
         const index = resetIndex ? lastIndex : this.state.index - 1;
         this.setState({
             index: index
         })
     };
+
     nextSlide = () => {
         const lastIndex = this.state.images.length - 1;
         const resetIndex = this.state.index === lastIndex;

@@ -1,12 +1,10 @@
 import React from 'react'
-import '../css/App.css';
 
 const Header = (props) => {
     let img;
 
     if(props.img === undefined) img = require('../css/img/blanc.jpg');
     else img = props.img;
-
 
     return (
         <div id="header">

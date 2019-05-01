@@ -1,5 +1,4 @@
 //Colors
-
 $color-white: #ffffff;
 $background-color: #f9f9f9;
 $color-light-grey: #eeeeee;
@@ -14,13 +13,10 @@ $page-height: 2 * 100vh;
 $card-height: 0.2 * 1080px;
 
 $grid-breakpoints: (
-        xs: 0px,
-        sm: 480px,
+        xs: 0,
+        sm: 576px,
         md: 768px,
-        lg: 1324px,
-        xl: 1824px
-);
-
-
-
+        lg: 992px,
+        xl: 1200px
+) !default;
 

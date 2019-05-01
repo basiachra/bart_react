@@ -1,7 +1,5 @@
 import React from "react";
-import '../css/App.css';
 import close from "../css/img/close_icon.svg";
-
 import add_category from '../css/img/add_category.svg';
 import add_images from '../css/img/add_gallery.svg';
 

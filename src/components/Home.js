@@ -1,11 +1,10 @@
 import React from 'react'
-import '../css/App.css'
 import Card from './Card'
 import Header from './Header'
 import {Gallery} from "./Gallery";
-
-import add from '../css/img/add_icon.svg'
 import Button from "./Button";
+import add from '../css/img/add_icon.svg'
+
 
 class Home extends React.Component {
     constructor(props){
